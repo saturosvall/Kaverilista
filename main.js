@@ -8,7 +8,7 @@ function luoLista(event) {
     let lista = document.getElementById('lista');           // määritetään listaelementti
 
 
-    for (let i = 0; i < 3; i++) {                           // loop 10 kertaa
+    for (let i = 0; i < 10; i++) {                           // loop 10 kertaa
         kaveriLista.push(prompt('Lisää nimi ' + (i+1)));    // pushataan annettu arvo listalle
         let li = document.createElement('li');              // luodaan li-elementti
         li.innerText = kaveriLista[i];                      // määritetään li    
