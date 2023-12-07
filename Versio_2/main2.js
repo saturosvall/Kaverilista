@@ -1,10 +1,4 @@
-// Tapahtumankäsittelijät
-
-/*
-let lomake2 = document.forms['lomake2'];
-let lomake3 = document.forms['lomake3'];
-let luettelo = document.getElementById('lista');*/
-
+// luodaan array nimilista
 const nimilista = [];
 
 function uusiNimiListaan() {
@@ -12,19 +6,21 @@ function uusiNimiListaan() {
     nimilista.push(nimi);
     let luettelo = "";
     
+    // nimilista luettelomalliin
     for(i = 0; i < nimilista.length; i++) {
         luettelo += nimilista[i] + "<br>";
     }
-    
-    console.log(nimilista);
     document.getElementById('input').value = '';
     document.getElementById("tulostus").innerHTML = luettelo;
 }
+
+// luodaan array poistettavista nimistä
 const poistettavat = []
 function poistaKaveri() {
     let poistonimi = document.getElementById('input').value;
-
     poistettavat.push(poistonimi);
+
+    // käydään läpi löytyykö poistettava nimi listalta
     for(let i = 0; i < nimilista.length; i++) {
         for(let j = 0; j < poistettavat.length; j++) {
           if (nimilista[i] === poistettavat[j]) {
@@ -34,11 +30,12 @@ function poistaKaveri() {
     for(i = 0; i < nimilista.length; i++) {
         luettelo = luettelo + nimilista[i] + "<br>";
     }
-    console.log(nimilista);
+    
     document.getElementById('input').value = '';
     document.getElementById("tulostus").innerHTML = luettelo;
 }
     
+// funktio joka järjestää listan aakkosjärjestykseen
 function organize() {
     nimilista.sort();
     let luettelo = "";
@@ -46,8 +43,6 @@ function organize() {
         luettelo += nimilista[i] + "<br>";
     }
     
-    console.log(nimilista);
-    console.log(luettelo);
     document.getElementById('input').value = '';
     document.getElementById("tulostus").innerHTML = luettelo;
 }
