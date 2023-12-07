@@ -9,16 +9,14 @@ const nimilista = [];
 
 function uusiNimiListaan() {
     let nimi = document.getElementById('input').value;
-
     nimilista.push(nimi);
-    
     let luettelo = "";
+    
     for(i = 0; i < nimilista.length; i++) {
         luettelo += nimilista[i] + "<br>";
     }
     
     console.log(nimilista);
-    console.log(luettelo);
     document.getElementById('input').value = '';
     document.getElementById("tulostus").innerHTML = luettelo;
 }
@@ -30,11 +28,22 @@ function poistaKaveri() {
     for(let i = 0; i < nimilista.length; i++) {
         for(let j = 0; j < poistettavat.length; j++) {
           if (nimilista[i] === poistettavat[j]) {
-            nimilista.pop(poistonimi);
+            nimilista.splice(i, 1);
           }}}
     let luettelo = "";
     for(i = 0; i < nimilista.length; i++) {
         luettelo = luettelo + nimilista[i] + "<br>";
+    }
+    console.log(nimilista);
+    document.getElementById('input').value = '';
+    document.getElementById("tulostus").innerHTML = luettelo;
+}
+    
+function organize() {
+    nimilista.sort();
+    let luettelo = "";
+    for(i = 0; i < nimilista.length; i++) {
+        luettelo += nimilista[i] + "<br>";
     }
     
     console.log(nimilista);
@@ -42,7 +51,5 @@ function poistaKaveri() {
     document.getElementById('input').value = '';
     document.getElementById("tulostus").innerHTML = luettelo;
 }
-    
-
 
 

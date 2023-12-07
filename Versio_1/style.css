@@ -5,10 +5,9 @@ body {
 }
 
 .tausta {
-    background-image: url(maisema9.jpg);
     background: url(tausta.jpg) no-repeat center; 
     background-size: cover;
-    height: 500px;
+    height: auto;
     position: relative;
   }
 
