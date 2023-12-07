@@ -24,6 +24,7 @@ input {
     color: white;
     padding: 5px 10px;
     text-align: center;
+    letter-spacing: 1px;
     font-family: 'Rubik';
     text-decoration: none;
     display: inline-block;
